@@ -1,0 +1,10 @@
+input {
+    background-color: #e9ecef !important;
+}
+
+.custom-input {
+    display: flex;
+    justify-content: center;
+    height: 47px;
+    width: 47px;
+}
