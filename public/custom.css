@@ -1,3 +1,14 @@
+:root {
+    --primary-color: #329e5e;
+}
+
+html,
+body {
+    font-size: 15px;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #e9ecef;
+}
+
 input {
     background-color: #e9ecef !important;
 }
@@ -7,4 +18,8 @@ input {
     justify-content: center;
     height: 47px;
     width: 47px;
+}
+
+.text-green {
+    color: var(--primary-color);
 }

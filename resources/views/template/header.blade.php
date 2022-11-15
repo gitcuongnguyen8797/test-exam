@@ -11,12 +11,5 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('custom.css')}}">
-        <style>
-            body {
-                font-size: 15px;
-                font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            }
-        </style>
-
         @yield('css')
     </head>

@@ -4,12 +4,12 @@
 @endsection
 
 @section('body')
-<div class="d-flex justify-content-center align-items-center">
+<div class="d-flex justify-content-center align-items-center" style="height: 99vh;">
     <form class="form register-form">
-       <div class="container p-4">
+       <div class="container">
             <!-- Account Section -->
             <section>
-                <h6 class="pb-2">Account</h6>
+                <h6 class="text-green fw-bold pb-2">Account</h6>
                 <div class="form-group">
                     <div class="input-group mb-3">
                         <span class="input-group-text custom-input" id="basic-addon1"><i class="fa fa-user" style="color: grey"></i></span>
@@ -34,31 +34,34 @@
             <section>
                 <div class="row">
                     <div class="col-6">
-                        <h6>Date of Birth</h6>
+                        <h6 class="text-green fw-bold pb-2">Date of Birth</h6>
                         <div class="row">
-                            <input type="number" class="col-4" placeholder="DD" aria-label="DD" aria-describedby="basic-addon1" min="1" max="31" >
-                            <input type="number" class="col-4" placeholder="MM" aria-label="MM" aria-describedby="basic-addon1" min="1" max="12">
-                            <input type="number" class="col-4" placeholder="YYYY" aria-label="YYYY" aria-describedby="basic-addon1">
+                            <div class="col-4"><input type="text" placeholder="DD" class="form-control"></div>
+                            <div class="col-4"><input type="text" placeholder="MM" class="form-control"></div>
+                            <div class="col-4"><input type="text" placeholder="YYYY" class="form-control"></div>
                         </div>
                     </div>
                     <div class="col-6">
-                        <h6>Gender</h6>
-                        <select name="" id="">
-                            <option value="1"></option>
-                            <option value="1"></option>
-                        </select>
+                        <h6 class="text-green fw-bold pb-2">Gender</h6>
+                        <div class="row">
+                            <input hidden name="" />
+                            <div class="col-6 btn btn-primary">Male</div>
+                            <div class="col-6 btn btn-muted">Female</div>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Payment Details Section-->
             <section>
-
+                <h6 class="text-green fw-bold pb-2">Payment Details</h6>
+                
             </section>
 
             <!-- Term and Conditions Section-->
-            <section>
-
+            <section >
+                <h6 class="text-green fw-bold">Terms and Conditions</h6>
+                <input type="checkbox"> I accept the terms and conditions for signing up to this service, and hereby confirm I have read the privacy policy
             </section>
 
        </div>
