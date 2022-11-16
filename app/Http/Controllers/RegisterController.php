@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
@@ -14,6 +15,9 @@ class RegisterController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        return 'ok';
+        // Bcrypt password before saving
+        $request['password'] = bcrypt($request->password);
+        User::create($request->all());
+        return back()->with('success', "Register Successfull");
     }
 }

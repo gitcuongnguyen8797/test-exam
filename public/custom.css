@@ -1,25 +1,34 @@
 :root {
     --primary-color: #329e5e;
+    --muted-color: #e9ecef;
+    --white-color: #ffffff;
 }
 
 html,
 body {
+    background-color: var(--muted-color);
     font-size: 15px;
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #e9ecef;
 }
 
-input {
-    background-color: #e9ecef !important;
+* {
+    box-sizing: border-box;
 }
 
-.custom-input {
-    display: flex;
-    justify-content: center;
-    height: 47px;
-    width: 47px;
-}
 
-.text-green {
+.green-color {
     color: var(--primary-color);
+}
+
+.green-bg-color {
+    background-color: var(--primary-color);
+}
+
+.muted-color {
+    color: var(--muted-color);
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
 }

@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use DateTime;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterRequest extends FormRequest
 {
@@ -25,15 +27,23 @@ class RegisterRequest extends FormRequest
     {
         return [
             'full_name'         => 'required|string',
-            'email'             => 'required|email',
-            'password'          => 'required',
-            'dob'               => 'required',
-            'gender'            => 'nullable',
+            'email'             => 'required|email|unique:users,email',
+            'password'          => 'required|min:6',
+            'dob'               => 'required|date',
+            'gender'            => 'required',
             'payment_method'    => 'required',
-            'card_number'       => 'required',
-            'cvc'               => 'required',
-            'expired_date'      => 'required',
+            'card_number'       => 'required|min:16|max:16',
+            'cvc'               => 'required|min:3|max:3',
+            'expired_date'      => 'required|after:yesterday',
             'term_accepted'     => 'required'
         ];
+    }
+
+    protected function prepareForValidation()
+    {   
+        $this->merge([
+            'dob'               => $this->request->get('dob_year') . '/' . $this->request->get('dob_month') . '/' . $this->request->get('dob_date'),
+            'expired_date'      => (DateTime::createFromFormat('M/Y', $this->request->get('expired_date') . '/' . $this->request->get('expired_year')))->format('y-m-d')
+        ]);
     }
 }
