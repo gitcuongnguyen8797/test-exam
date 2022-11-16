@@ -134,7 +134,6 @@
                 <section class="row">
                     <button class="btn form-control green-bg-color text-white" type="submit" id="btn-submit">REGISTER</button>
                 </section>
-            </div>
             </form>
         </div>
     </div>
