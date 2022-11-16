@@ -10,8 +10,8 @@
 @endsection
 
 @section('body')
-<div class="d-flex justify-content-center align-items-center">
-        <div class="register-form shadow-sm rounded">
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="register-form shadow-sm rounded ">
             <form method="POST" action="./register-user" id="form-register">
                 @csrf
                 @if ($errors->any())
@@ -63,13 +63,13 @@
                         <h6 class="green-color fw-bold pb-2">Date of Birth</h6>
                         <div class="row">
                             <div class="col-4 custom-padding"><input class="form-control custom-input" type="text"
-                                    placeholder="DD" value="{{old('dob_date')}}" name="dob_date">
+                                    placeholder="DD" value="{{old('dob_date')}}" name="dob_date" maxlength="2">
                             </div>
                             <div class="col-4 custom-padding"><input class="form-control custom-input" type="text"
-                                    placeholder="MM" value="{{old('dob_month')}}" name="dob_month">
+                                    placeholder="MM" value="{{old('dob_month')}}" name="dob_month" maxlength="2">
                             </div>
                             <div class="col-4 custom-padding"><input class="form-control custom-input" type="text"
-                                    placeholder="YYYY" value="{{old('dob_year')}}" name="dob_year"></div>
+                                    placeholder="YYYY" value="{{old('dob_year')}}" name="dob_year" maxlength="4"></div>
                         </div>
 
                     </div>
@@ -109,13 +109,13 @@
                                         style="color:grey"></i></span>
                             </div>
                             <input type="text" name="cvc" class="form-control custom-input" placeholder="Card CVC"
-                                aria-label="Card CVC" aria-describedby="basic-addon1" value="{{old('cvc')}}" >
+                                aria-label="Card CVC" aria-describedby="basic-addon1" value="{{old('cvc')}}" maxlength="3">
                         </div>
                     </div>
                     <div class="col-6">
                         <input type="text" hidden name="expired_date">
                         <div class="row">
-                            <input type="text" class="col-6 rounded custom-input text-center" placeholder="1 Jan"  name="expired_date" style="border: 1px solid #ced4da;" autocomplete="false" value="{{old('expired_date')}}">
+                            <input type="text" class="col-6 rounded custom-input text-center" placeholder="1 Jan"  name="expired_month" style="border: 1px solid #ced4da;" autocomplete="false" value="{{old('expired_month')}}">
                             <input class="col-6 rounded custom-input text-center" placeholder="2015" name="expired_year" style="border: 1px solid #ced4da;" autocomplete="false" value="{{old('expired_year')}}">
                         </div>
                     </div>

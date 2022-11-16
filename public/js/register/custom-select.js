@@ -25,7 +25,7 @@ const customSelect = (className, callback, defaultValue = 0) => {
 }
 
 const dateTimePicker = () => {
-    $('input[name="expired_date"]').datepicker({
+    $('input[name="expired_month"]').datepicker({
         format: "MM",
         startView: "months", 
         minViewMode: "months"
